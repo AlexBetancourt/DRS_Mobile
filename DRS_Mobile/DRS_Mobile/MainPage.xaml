@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DRS_Mobile"
+             x:Class="DRS_Mobile.MainPage" BackgroundImage="BlankArmor.png">
+
+
+    <AbsoluteLayout>
+        <!--HEAD-->
+        <Label x:Name="lblHHP" Font="Bold,20" TextColor="Black" Text="1" Rotation="0" AbsoluteLayout.LayoutBounds="200,50,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stHHP" Minimum="0" Increment="1" ValueChanged="OnValueChangedH" Rotation="0" AbsoluteLayout.LayoutBounds="100,80,AutoSize,AutoSize" />
+        <!--CENTER TORSO-->
+        <Label x:Name="lblCTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="180,270,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stCTHP" Minimum="0" Increment="1" ValueChanged="stCTHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="100,300,AutoSize,AutoSize" />
+        <!--LEFT TORSO-->
+        <Label x:Name="lblLTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="100,120,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stLTHP" Minimum="0" Increment="1" ValueChanged="stLTHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="20,140,AutoSize,AutoSize" />
+        <!--RIGHT TORSO-->
+        <Label x:Name="lblRTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="260,120,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stRTHP" Minimum="0" Increment="1" ValueChanged="stRTHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="200,140,AutoSize,AutoSize" />
+        <!--LEFT ARM-->
+        <Label x:Name="lblLAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="50,220,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stLAHP" Minimum="0" Increment="1" ValueChanged="stLAHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="0,250,AutoSize,AutoSize" />
+        <!--RIGHT ARM-->
+        <Label x:Name="lblRAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="330,220,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stRAHP" Minimum="0" Increment="1" ValueChanged="stRAHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="210,250,AutoSize,AutoSize" />
+        <!--LEFT LEG-->
+        <Label x:Name="lblLLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="100,550,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stLLHP" Minimum="0" Increment="1" ValueChanged="stLLHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="0,600,AutoSize,AutoSize" />
+        <!--RIGHT LEG-->
+        <Label x:Name="lblRLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="280,550,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stRLHP" Minimum="0" Increment="1" ValueChanged="stRLHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="180,600,AutoSize,AutoSize" />
+
+        <!--INTERNAL HEAD-->
+        <Label x:Name="lblIHHP" Font="Bold,20" TextColor="Black" Text="1" Rotation="0" AbsoluteLayout.LayoutBounds="200,50,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stIHHP" Minimum="0" Increment="1" ValueChanged="stIHHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="100,80,AutoSize,AutoSize" />
+        <!--INTERNAL CENTER TORSO-->
+        <Label x:Name="lblICTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="180,270,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stICTHP" Minimum="0" Increment="1" ValueChanged="stICTHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="100,300,AutoSize,AutoSize" />
+        <!--INTERNAL LEFT TORSO-->
+        <Label x:Name="lblILTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="100,120,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stILTHP" Minimum="0" Increment="1" ValueChanged="stILTHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="20,140,AutoSize,AutoSize" />
+        <!--INTERNAL RIGHT TORSO-->
+        <Label x:Name="lblIRTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="260,120,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stIRTHP" Minimum="0" Increment="1" ValueChanged="stIRTHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="200,140,AutoSize,AutoSize" />
+        <!--INTERNAL LEFT ARM-->
+        <Label x:Name="lblILAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="50,220,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stILAHP" Minimum="0" Increment="1" ValueChanged="stILAHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="0,250,AutoSize,AutoSize" />
+        <!--INTERNAL RIGHT ARM-->
+        <Label x:Name="lblIRAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="330,220,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stIRAHP" Minimum="0" Increment="1" ValueChanged="stIRAHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="210,250,AutoSize,AutoSize" />
+        <!--INTERNAL LEFT LEG-->
+        <Label x:Name="lblILLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="100,550,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stILLHP" Minimum="0" Increment="1" ValueChanged="stILLHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="0,600,AutoSize,AutoSize" />
+        <!--INTERNAL RIGHT LEG-->
+        <Label x:Name="lblIRLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="280,550,AutoSize,AutoSize"></Label>
+        <Stepper x:Name ="stIRLHP" Minimum="0" Increment="1" ValueChanged="stIRLHP_ValueChanged" Rotation="0" AbsoluteLayout.LayoutBounds="180,600,AutoSize,AutoSize" />
+       
+        
+        <!--HEAT-->
+        <ProgressBar x:Name="pbHeat" Progress="0.8" ProgressColor="Red" Grid.Row="4"  AbsoluteLayout.LayoutBounds="-130,450,300,AutoSize" Rotation="-90"/>
+    </AbsoluteLayout>
+</ContentPage>
