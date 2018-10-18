@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Plugin.TextToSpeech;
 using Plugin.TextToSpeech.Abstractions;
+using System.Collections.Generic;
 
 namespace DRS_Mobile
 {
 
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
 
 
@@ -54,7 +55,6 @@ namespace DRS_Mobile
             lblILLHP.Text = stLLHP.Maximum.ToString();
             lblIRLHP.Text = stRLHP.Maximum.ToString();
 
-
             stHHP.Value = stHHP.Maximum;
             stCTHP.Value = stCTHP.Maximum;
             stLTHP.Value = stLTHP.Maximum;
@@ -73,13 +73,13 @@ namespace DRS_Mobile
             stILLHP.Value = stLLHP.Maximum;
             stIRLHP.Value = stRLHP.Maximum;
 
-            stIHHP.IsVisible = 
-            stICTHP.IsVisible = 
-            stILTHP.IsVisible = 
-            stIRTHP.IsVisible = 
-            stILAHP.IsVisible = 
-            stIRAHP.IsVisible = 
-            stILLHP.IsVisible = 
+            stIHHP.IsVisible =
+            stICTHP.IsVisible =
+            stILTHP.IsVisible =
+            stIRTHP.IsVisible =
+            stILAHP.IsVisible =
+            stIRAHP.IsVisible =
+            stILLHP.IsVisible =
             stIRLHP.IsVisible = false;
             lblIHHP.IsVisible =
             lblICTHP.IsVisible =
@@ -100,6 +100,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblHHP.BackgroundColor = Color.LightGray;
+                lblHHP.IsVisible = false;
+                stHHP.IsVisible = false;
+                lblIHHP.IsVisible = true;
+                stIHHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stHHP.Maximum.ToString()) / 3))
             {
@@ -123,6 +127,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblCTHP.BackgroundColor = Color.LightGray;
+                lblCTHP.IsVisible = false;
+                stCTHP.IsVisible = false;
+                lblICTHP.IsVisible = true;
+                stICTHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stCTHP.Maximum.ToString()) / 3))
             {
@@ -146,6 +154,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblLTHP.BackgroundColor = Color.LightGray;
+                lblLTHP.IsVisible = false;
+                stLTHP.IsVisible = false;
+                lblILTHP.IsVisible = true;
+                stILTHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stLTHP.Maximum.ToString()) / 3))
             {
@@ -169,6 +181,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblRTHP.BackgroundColor = Color.LightGray;
+                lblRTHP.IsVisible = false;
+                stRTHP.IsVisible = false;
+                lblIRTHP.IsVisible = true;
+                stIRTHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stRTHP.Maximum.ToString()) / 3))
             {
@@ -192,6 +208,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblLAHP.BackgroundColor = Color.LightGray;
+                lblLAHP.IsVisible = false;
+                stLAHP.IsVisible = false;
+                lblILAHP.IsVisible = true;
+                stILAHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stLAHP.Maximum.ToString()) / 3))
             {
@@ -215,6 +235,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblRAHP.BackgroundColor = Color.LightGray;
+                lblRAHP.IsVisible = false;
+                stRAHP.IsVisible = false;
+                lblIRAHP.IsVisible = true;
+                stIRAHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stRAHP.Maximum.ToString()) / 3))
             {
@@ -238,6 +262,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblLLHP.BackgroundColor = Color.LightGray;
+                lblLLHP.IsVisible = false;
+                stLLHP.IsVisible = false;
+                lblILLHP.IsVisible = true;
+                stILLHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stLLHP.Maximum.ToString()) / 3))
             {
@@ -261,6 +289,10 @@ namespace DRS_Mobile
             if (int.Parse(e.NewValue.ToString()) == 0)
             {
                 lblRLHP.BackgroundColor = Color.LightGray;
+                lblRLHP.IsVisible = false;
+                stRLHP.IsVisible = false;
+                lblIRLHP.IsVisible = true;
+                stIRLHP.IsVisible = true;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stRLHP.Maximum.ToString()) / 3))
             {
@@ -307,28 +339,28 @@ namespace DRS_Mobile
                     Ubicacion = "Right Leg";
                     break;
                 case "IHH":
-                    Ubicacion = "Internal Head";
+                    Ubicacion = " Head";
                     break;
                 case "ICT":
-                    Ubicacion = "Internal Center Torso";
+                    Ubicacion = " Center Torso";
                     break;
                 case "ILT":
-                    Ubicacion = "Internal Left Torso";
+                    Ubicacion = " Left Torso";
                     break;
                 case "IRT":
-                    Ubicacion = "Internal Right Torso";
+                    Ubicacion = " Right Torso";
                     break;
                 case "ILA":
-                    Ubicacion = "Internal Left Arm";
+                    Ubicacion = " Left Arm";
                     break;
                 case "IRA":
-                    Ubicacion = "Internal Right Arm";
+                    Ubicacion = " Right Arm";
                     break;
                 case "ILL":
-                    Ubicacion = "Internal Left Leg";
+                    Ubicacion = " Left Leg";
                     break;
                 case "IRL":
-                    Ubicacion = "Internal Right Leg";
+                    Ubicacion = " Right Leg";
                     break;
                 default:
                     Ubicacion = "";
@@ -347,8 +379,6 @@ namespace DRS_Mobile
                 string Speech = text.Text;
                 CrossTextToSpeech.Current.Speak(Speech);
             }
-
-
         }
 
         private void stIHHP_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -362,7 +392,6 @@ namespace DRS_Mobile
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIHHP.Maximum.ToString()) / 3))
             {
-
                 lblIHHP.BackgroundColor = Color.Red;
             }
             else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIHHP.Maximum.ToString()) / 3) * 2)
@@ -377,37 +406,174 @@ namespace DRS_Mobile
 
         private void stICTHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            lblICTHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblICTHP, null, lblICTHP, "ICTHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblICTHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stICTHP.Maximum.ToString()) / 3))
+            {
+                lblICTHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stICTHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblICTHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblICTHP.BackgroundColor = Color.White;
+            }
         }
 
         private void stILTHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            lblILTHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblILTHP, null, lblILTHP, "ILTHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblILTHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stILTHP.Maximum.ToString()) / 3))
+            {
 
+                lblILTHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stILTHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblILTHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblILTHP.BackgroundColor = Color.White;
+            }
         }
 
         private void stIRTHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            lblIRTHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblIRTHP, null, lblIRTHP, "IRTHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblIRTHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIRTHP.Maximum.ToString()) / 3))
+            {
 
+                lblIRTHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIRTHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblIRTHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblIRTHP.BackgroundColor = Color.White;
+            }
         }
 
         private void stILAHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            lblILAHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblILAHP, null, lblILAHP, "ILAHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblILAHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stILAHP.Maximum.ToString()) / 3))
+            {
 
+                lblILAHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stILAHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblILAHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblILAHP.BackgroundColor = Color.White;
+            }
         }
 
         private void stIRAHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            lblIRAHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblIRAHP, null, lblIRAHP, "IRAHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblIRAHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIRAHP.Maximum.ToString()) / 3))
+            {
 
+                lblIRAHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIRAHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblIRAHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblIRAHP.BackgroundColor = Color.White;
+            }
         }
 
         private void stILLHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            lblILLHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblILLHP, null, lblILLHP, "ILLHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblILLHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stILLHP.Maximum.ToString()) / 3))
+            {
 
+                lblILLHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stILLHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblILLHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblILLHP.BackgroundColor = Color.White;
+            }
         }
 
         private void stIRLHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            lblIRLHP.Text = string.Format("{0}", e.NewValue.ToString());
+            Button_Clicked(lblIRLHP, null, lblIRLHP, "IRLHP");
+            if (int.Parse(e.NewValue.ToString()) == 0)
+            {
+                lblIRLHP.BackgroundColor = Color.LightGray;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIRLHP.Maximum.ToString()) / 3))
+            {
 
+                lblIRLHP.BackgroundColor = Color.Red;
+            }
+            else if (int.Parse(e.NewValue.ToString()) <= (int.Parse(stIRLHP.Maximum.ToString()) / 3) * 2)
+            {
+                lblIRLHP.BackgroundColor = Color.Yellow;
+            }
+            else
+            {
+                lblIRLHP.BackgroundColor = Color.White;
+            }
+        }
+
+        void CmdWeapons_Clicked(object sender, EventArgs e)
+        {
+            var WeaponPage = new Weapons();
+            Navigation.PushAsync(WeaponPage, true);
+        }
+
+        void cmdInternals_Clicked(object sender, EventArgs e)
+        {
+            var InternalsPage = new Internals();
+            Navigation.PushAsync(InternalsPage, true);
         }
     }
 

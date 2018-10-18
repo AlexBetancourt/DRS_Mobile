@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DRS_Mobile.Weapons" BackgroundImage="BlankArmor.png" Title="Weapons">
+    <ContentPage.Content>
+        <ScrollView>        
+            <AbsoluteLayout >
+
+                <!--HEAD-->
+                <Label x:Name="lblHHP" Font="Bold,20" TextColor="Black" Text="1" Rotation="0" AbsoluteLayout.LayoutBounds="0.5,0.05,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stHHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="0.5,0.10,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--CENTER TORSO-->
+                <Label x:Name="lblCTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="0.5,0.35,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stCTHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="0.5,0.40,AutoSize,AutoSize"  AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <!--LEFT TORSO-->
+                <Label x:Name="lblLTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="0.25,0.20,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stLTHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="0.05,0.25,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--RIGHT TORSO-->
+                <Label x:Name="lblRTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="0.70,0.20,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stRTHP" Minimum="0" Increment="1"  Rotation="-90" AbsoluteLayout.LayoutBounds="0.95,0.25,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--LEFT ARM-->
+                <Label x:Name="lblLAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stLAHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="0,0.5,AutoSize,AutoSize"  AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <!--RIGHT ARM-->
+                <Label x:Name="lblRAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stRAHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,0.5,AutoSize,AutoSize"  AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <!--LEFT LEG-->
+                <Label x:Name="lblLLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stLLHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"  AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <!--RIGHT LEG-->
+                <Label x:Name="lblRLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stRLHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"  AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <!--INTERNAL HEAD-->
+                <Label x:Name="lblIHHP" Font="Bold,20" TextColor="Black" Text="1" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stIHHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"    />
+                <!--INTERNAL CENTER TORSO-->
+                <Label x:Name="lblICTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stICTHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--INTERNAL LEFT TORSO-->
+                <Label x:Name="lblILTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stILTHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"   AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <!--INTERNAL RIGHT TORSO-->
+                <Label x:Name="lblIRTHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stIRTHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--INTERNAL LEFT ARM-->
+                <Label x:Name="lblILAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stILAHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--INTERNAL RIGHT ARM-->
+                <Label x:Name="lblIRAHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stIRAHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--INTERNAL LEFT LEG-->
+                <Label x:Name="lblILLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stILLHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--INTERNAL RIGHT LEG-->
+                <Label x:Name="lblIRLHP" Font="Bold,20" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                <Stepper x:Name ="stIRLHP" Minimum="0" Increment="1"  Rotation="0" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <!--HEAT-->
+                <ProgressBar x:Name="pbHeat" Progress="0.8" ProgressColor="Red" Grid.Row="4"  AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" Rotation="0" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            </AbsoluteLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
