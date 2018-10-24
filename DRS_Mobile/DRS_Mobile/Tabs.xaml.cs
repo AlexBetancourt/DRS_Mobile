@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DRS_Mobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    public partial class Tabs : TabbedPage
     {
-        public MainPage ()
+        public Tabs ()
         {
             InitializeComponent();
             this.Children.Add(new MainPage() { Title = "Damage" });

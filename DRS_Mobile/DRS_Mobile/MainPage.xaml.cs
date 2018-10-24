@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace DRS_Mobile
 {
 
-    public partial class MainPage : MasterDetailPage
+    public partial class MainPage : ContentPage
     {
 
 

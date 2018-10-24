@@ -4,17 +4,39 @@
              x:Class="DRS_Mobile.Internals" Title="Internals">
     <ContentPage.Content>
         <StackLayout>
-            <Picker x:Name="picker" Title="Select a Mech" FontSize="Large">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>HBK-4G Hunckback</x:String>
-                        <x:String>PNT-9R Panther</x:String>
-                        <x:String>CPLT-1C Catapult</x:String>
-                        <x:String>COM-1B Commando</x:String>
-                        <x:String>DRG-1N Dragon</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
+            <ScrollView>
+                <Picker x:Name="picker" Title="Select a Mech" FontSize="Large">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>HBK-4G Hunckback</x:String>
+                            <x:String>PNT-9R Panther</x:String>
+                            <x:String>CPLT-1C Catapult</x:String>
+                            <x:String>COM-1B Commando</x:String>
+                            <x:String>DRG-1N Dragon</x:String>
+                            <x:String>HBK-4G Hunckback</x:String>
+                            <x:String>PNT-9R Panther</x:String>
+                            <x:String>CPLT-1C Catapult</x:String>
+                            <x:String>COM-1B Commando</x:String>
+                            <x:String>DRG-1N Dragon</x:String>
+                            <x:String>HBK-4G Hunckback</x:String>
+                            <x:String>PNT-9R Panther</x:String>
+                            <x:String>CPLT-1C Catapult</x:String>
+                            <x:String>COM-1B Commando</x:String>
+                            <x:String>DRG-1N Dragon</x:String>
+                            <x:String>HBK-4G Hunckback</x:String>
+                            <x:String>PNT-9R Panther</x:String>
+                            <x:String>CPLT-1C Catapult</x:String>
+                            <x:String>COM-1B Commando</x:String>
+                            <x:String>DRG-1N Dragon</x:String>
+                            <x:String>HBK-4G Hunckback</x:String>
+                            <x:String>PNT-9R Panther</x:String>
+                            <x:String>CPLT-1C Catapult</x:String>
+                            <x:String>COM-1B Commando</x:String>
+                            <x:String>DRG-1N Dragon</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

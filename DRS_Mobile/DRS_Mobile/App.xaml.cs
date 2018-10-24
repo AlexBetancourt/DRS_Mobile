@@ -1,17 +1,20 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.IO;
+using DRS_Mobile.Data;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace DRS_Mobile
 {
     public partial class App : Application
     {
+        static MechDatabase database;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Tabs();
         }
 
         protected override void OnStart()
@@ -28,5 +31,21 @@ namespace DRS_Mobile
         {
             // Handle when your app resumes
         }
+
+
+
+        public static MechDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new MechDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+                }
+                return database;
+            }
+        }
+
+
     }
 }
