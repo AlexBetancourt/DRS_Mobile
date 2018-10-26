@@ -25,11 +25,24 @@ namespace DRS_Mobile.Models
             set;
         }
     }
+    public class MechLocations
+    {
+        public LocationsArmor Armor
+        {
+            get; set;
+        }
+
+        public LocationInternal Internals
+        {
+            get; set;
+        }
+    }
+
     public class LocationsArmor
     {
         public int HArmor { get; set; }
         public int CTArmor { get; set; }
-        public int LRArmor { get; set; }
+        public int LTArmor { get; set; }
         public int RTArmor { get; set; }
         public int LAArmor { get; set; }
         public int RAArmor { get; set; }
@@ -44,33 +57,31 @@ namespace DRS_Mobile.Models
     {
         public int HInternal { get; set; }
         public int CTInternal { get; set; }
-        public int LRInternal { get; set; }
+        public int LTInternal { get; set; }
         public int RTInternal { get; set; }
         public int LAInternal { get; set; }
         public int RAInternal { get; set; }
         public int LLInternal { get; set; }
         public int RLInternal { get; set; }
-    }
+        public int HSlots = 6;
+        public int CTSlots = 12;
+        public int LTSlots = 12;
+        public int RTSlots = 12;
+        public int LASlots = 12;
+        public int RASlots = 12;
+        public int LLSlots = 6;
+        public int RLSlots = 6;
+        public List<LocationSlots> LocationSlotList { get; set; }
 
-    public class LocationSlots
-    {
-        public int ID { get; set; }
-        public string Description { get; set; }
-        public bool Status { get; set; }
-    }
-
-    public class MechLocations
-    {
-        public LocationsArmor Armor
+        public class LocationSlots
         {
-            get;set;
+            public string Description { get; set; }
+            public bool Status { get; set; }
         }
-        
-        public LocationInternal Internals
-        { get; set; }
-       
-    }
 
+
+
+    }
     public class MechConfigurations
     {
         public int Tonnage { get; set; }
@@ -85,8 +96,8 @@ namespace DRS_Mobile.Models
         public int LL { get; set; }
         public int RL { get; set; }
         public int MaxArmor { get; set; }
-
     }
+
     public class AmmoItems
     {
         [PrimaryKey, AutoIncrement]
@@ -116,6 +127,7 @@ namespace DRS_Mobile.Models
         public int BV { get; set; }
         public string EquipmentType { get; set; }
     }
+
     #endregion
 
 
@@ -159,3 +171,4 @@ namespace DRS_Mobile.Models
     }
     #endregion
 }
+

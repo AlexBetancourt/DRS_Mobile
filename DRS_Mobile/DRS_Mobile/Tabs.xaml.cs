@@ -15,9 +15,13 @@ namespace DRS_Mobile
         public Tabs ()
         {
             InitializeComponent();
+            this.Children.Add(new Internals() { Title = "Generals" });
             this.Children.Add(new MainPage() { Title = "Damage" });
             this.Children.Add(new Weapons() { Title = "Weapons" });
-            this.Children.Add(new Internals() { Title = "Internals" });
+           
+            this.Children.Add(new Internals() { Title = "Internals2" });
+            this.Children.Add(new Internals() { Title = "Internals3" });
+            this.Children.Add(new Internals() { Title = "Internals4" });
         }
     }
 }

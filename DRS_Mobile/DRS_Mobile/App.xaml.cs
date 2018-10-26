@@ -40,7 +40,7 @@ namespace DRS_Mobile
             {
                 if (database == null)
                 {
-                    database = new MechDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+                    database = new MechDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MechDB.db3"));
                 }
                 return database;
             }

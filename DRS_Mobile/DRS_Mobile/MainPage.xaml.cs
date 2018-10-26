@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Plugin.TextToSpeech;
 using Plugin.TextToSpeech.Abstractions;
-using System.Collections.Generic;
-
+using DRS_Mobile.Data;
+using DRS_Mobile.Models;
 namespace DRS_Mobile
 {
 
@@ -19,23 +19,73 @@ namespace DRS_Mobile
         {
             InitializeComponent();
 
-            stHHP.Maximum = 9;
-            stCTHP.Maximum = 25;
-            stLTHP.Maximum = 18;
-            stRTHP.Maximum = 18;
-            stLAHP.Maximum = 12;
-            stRAHP.Maximum = 12;
-            stLLHP.Maximum = 15;
-            stRLHP.Maximum = 15;
 
-            stIHHP.Maximum = 3;
-            stICTHP.Maximum = 9;
-            stILTHP.Maximum = 5;
-            stIRTHP.Maximum = 5;
-            stILAHP.Maximum = 3;
-            stIRAHP.Maximum = 3;
-            stILLHP.Maximum = 4;
-            stIRLHP.Maximum = 4;
+
+            Mech mech = new Mech();
+
+            mech.Name = "Commando";
+            mech.Variant = "COM-2D";
+            mech.WalkSpeed = 6;
+            mech.RunSpeed = 9;
+            mech.JumpSpeed = 0;
+            mech.HeatSinks = 10;
+            mech.Tonnage = 25;
+            MechLocations locations = new MechLocations();
+
+            LocationsArmor Armor = new LocationsArmor();
+            Armor.HArmor = 6;
+            Armor.CTArmor = 8;
+            Armor.LTArmor = 6;
+            Armor.RTArmor = 6;
+            Armor.LAArmor = 6;
+            Armor.RAArmor = 6;
+            Armor.LLArmor = 8;
+            Armor.RLArmor = 8;
+            Armor.CTRArmor = 4;
+            Armor.LTRArmor = 3;
+            Armor.RTRArmor = 3;
+            locations.Armor = Armor;
+            LocationInternal internals = new LocationInternal();
+            internals.HInternal = 3;
+            internals.CTInternal = 8;
+            internals.LTInternal = 6;
+            internals.RTInternal = 6;
+            internals.LAInternal = 4;
+            internals.RAInternal = 4;
+            internals.LLInternal = 6;
+            internals.RLInternal = 6;
+
+            List<LocationInternal.LocationSlots> Lista = new List<LocationInternal.LocationSlots>();
+            for (int i = 0; i < internals.HSlots; i++)
+            {
+                LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                slot.Description = "cockpit" + i;
+                slot.Status = false;
+                Lista.Add(slot);
+            }
+            internals.LocationSlotList = Lista;
+            locations.Internals = internals;
+            mech.mechLocations = locations;
+
+            lblMech.Text =mech.Variant + " " +  mech.Name;
+
+            stHHP.Maximum =mech.mechLocations.Armor.HArmor;
+            stCTHP.Maximum = mech.mechLocations.Armor.CTArmor;
+            stLTHP.Maximum = mech.mechLocations.Armor.LTArmor;
+            stRTHP.Maximum = mech.mechLocations.Armor.RTArmor;
+            stLAHP.Maximum = mech.mechLocations.Armor.LAArmor;
+            stRAHP.Maximum = mech.mechLocations.Armor.RAArmor;
+            stLLHP.Maximum = mech.mechLocations.Armor.LLArmor;
+            stRLHP.Maximum = mech.mechLocations.Armor.RLArmor;
+
+            stIHHP.Maximum = mech.mechLocations.Internals.HInternal;
+            stICTHP.Maximum = mech.mechLocations.Internals.CTInternal;
+            stILTHP.Maximum = mech.mechLocations.Internals.LTInternal;
+            stIRTHP.Maximum = mech.mechLocations.Internals.RTInternal;
+            stILAHP.Maximum = mech.mechLocations.Internals.LAInternal;
+            stIRAHP.Maximum = mech.mechLocations.Internals.RAInternal;
+            stILLHP.Maximum = mech.mechLocations.Internals.LLInternal;
+            stIRLHP.Maximum = mech.mechLocations.Internals.RLInternal;
 
             lblHHP.Text = stHHP.Maximum.ToString();
             lblCTHP.Text = stCTHP.Maximum.ToString();
@@ -90,11 +140,14 @@ namespace DRS_Mobile
             lblILLHP.IsVisible =
             lblIRLHP.IsVisible = false;
 
+
+
+
         }
 
         void OnValueChangedH(object sender, ValueChangedEventArgs e)
         {
-            pbHeat.Progress = e.NewValue / stHHP.Maximum;
+            //pbHeat.Progress = e.NewValue / stHHP.Maximum;
             lblHHP.Text = string.Format("{0}", e.NewValue.ToString());
             Button_Clicked(lblHHP, null, lblHHP, "HHHP");
             if (int.Parse(e.NewValue.ToString()) == 0)
@@ -312,10 +365,12 @@ namespace DRS_Mobile
         private void Button_Clicked(object sender, EventArgs e, object Control, string Location)
         {
             string Ubicacion = "";
+            string Ubi="";
             switch (Location.Substring(0, 3))
             {
                 case "HHH":
                     Ubicacion = "Head";
+                    
                     break;
                 case "CTH":
                     Ubicacion = "Center Torso";
@@ -340,50 +395,58 @@ namespace DRS_Mobile
                     break;
                 case "IHH":
                     Ubicacion = " Head";
+                    Ubi = "H";
                     break;
                 case "ICT":
                     Ubicacion = " Center Torso";
+                    Ubi = "CT";
                     break;
                 case "ILT":
                     Ubicacion = " Left Torso";
+                    Ubi = "LT";
                     break;
                 case "IRT":
                     Ubicacion = " Right Torso";
+                    Ubi = "RT";
                     break;
                 case "ILA":
                     Ubicacion = " Left Arm";
+                    Ubi = "LA";
                     break;
                 case "IRA":
                     Ubicacion = " Right Arm";
+                    Ubi = "RA";
                     break;
                 case "ILL":
                     Ubicacion = " Left Leg";
+                    Ubi = "LL";
                     break;
                 case "IRL":
                     Ubicacion = " Right Leg";
+                    Ubi = "RL";
                     break;
                 default:
                     Ubicacion = "";
                     break;
             }
             var text = (Label)Control;
-            if (text.Text == "0" && Ubicacion.Substring(0, 1) != "I")
+            if (text.Text == "0" && Ubicacion.Substring(0, 1) != " ")
             {
-                text.Text = Ubicacion + " Armor Breached!";
-                string Speech = text.Text;
+               
+                string Speech = Ubicacion + " Armor Breached!";
                 CrossTextToSpeech.Current.Speak(Speech);
             }
-            else if (text.Text == "0" && Ubicacion.Substring(0, 1) == "I")
+            else if (text.Text == "0" && Ubicacion.Substring(0, 1) == " ")
             {
-                text.Text = Ubicacion + " Destroyed!";
-                string Speech = text.Text;
+                text.Text = Ubi + " Destroyed!";
+                string Speech = Ubicacion + " Destroyed";
                 CrossTextToSpeech.Current.Speak(Speech);
             }
         }
 
         private void stIHHP_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            pbHeat.Progress = e.NewValue / stIHHP.Maximum;
+            //pbHeat.Progress = e.NewValue / stIHHP.Maximum;
             lblIHHP.Text = string.Format("{0}", e.NewValue.ToString());
             Button_Clicked(lblIHHP, null, lblIHHP, "IHHP");
             if (int.Parse(e.NewValue.ToString()) == 0)
