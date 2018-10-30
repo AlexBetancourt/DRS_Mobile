@@ -16,13 +16,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="MechDiagram.xaml.cs">
+      <DependentUpon>MechDiagram.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="WarriorNMech.xaml.cs">
+      <DependentUpon>WarriorNMech.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MasterMenuMenuItem.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WeaponsNEquip.xaml.cs">
+      <DependentUpon>WeaponsNEquip.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Internals.xaml">
+    <EmbeddedResource Update="Components.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HeatData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WarriorNMech.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LanceComposition.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterMenuDetail.xaml">
@@ -43,7 +61,7 @@
     <EmbeddedResource Update="Views\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Weapons.xaml">
+    <EmbeddedResource Update="WeaponsNEquip.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

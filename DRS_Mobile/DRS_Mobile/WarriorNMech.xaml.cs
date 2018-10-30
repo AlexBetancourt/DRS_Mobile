@@ -11,13 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace DRS_Mobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Internals : ContentPage
+    public partial class WarriorNMech : ContentPage
     {
-        public Internals()
+        public WarriorNMech()
         {
             InitializeComponent();
-
-           // lvComponents.ItemsSource = mech.mechLocations.Internals.LocationSlotList;
+            
+            // lvComponents.ItemsSource = mech.mechLocations.Internals.LocationSlotList;
         }
 
         private void sliHits_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -47,6 +47,27 @@ namespace DRS_Mobile
                     txtCouns.Text = "0";
                     break;
             }
+        }
+
+        private void spHeatSinks_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            txtHeatSinks.Text = spHeatSinks.Value.ToString();
+        }
+
+        private void txtMechName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string MechName = "";
+
+            MechName = txtMechName.Text.Replace(' ', '_');
+            imgMech.Source = MechName + ".png";
+        }
+
+
+
+        private void Button_Pressed(object sender, EventArgs e)
+        {
+            var tabPage = this.Parent as TabbedPage;
+            tabPage.CurrentPage = tabPage.Children[1];
         }
     }
 }

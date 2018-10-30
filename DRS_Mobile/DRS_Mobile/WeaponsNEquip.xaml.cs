@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DRS_Mobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Weapons : ContentPage
+	public partial class WeaponsNEquip : ContentPage
 	{
-		public Weapons ()
+		public WeaponsNEquip ()
 		{
 			InitializeComponent ();
 		}

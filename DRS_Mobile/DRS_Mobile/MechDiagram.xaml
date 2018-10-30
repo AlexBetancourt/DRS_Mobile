@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DRS_Mobile"
-             x:Class="DRS_Mobile.MainPage" BackgroundImage="BlankArmor.png" AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" Title="Main Page">
+             x:Class="DRS_Mobile.MechDiagram" BackgroundImage="BlankArmor.png" AbsoluteLayout.LayoutBounds="0,0,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional" Title="Main Page">
     <AbsoluteLayout>
         <!--HEAD-->
         <Label x:Name="lblHHP" Font="Bold,30" TextColor="Black" Text="1" Rotation="0" AbsoluteLayout.LayoutBounds="0.5,0.05,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>

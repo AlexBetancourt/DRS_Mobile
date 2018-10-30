@@ -18,30 +18,30 @@ namespace DRS_Mobile.Models
         public int Tonnage { get; set; }
         public int HeatSinks { get; set; }
         public bool Done { get; set; }
-        public Pilot MechPilot
-        {
-            get;set;
-        }
-        public MechLocations mechLocations
-        {
-            get;
-            set;
-        }
-    }
-    public class MechLocations
-    {
-        public LocationArmor Armor
-        {
-            get; set;
-        }
 
-        public LocationInternal Internals
-        {
-            get; set;
-        }
+        //public MechLocations mechLocations
+        //{
+        //    get;
+        //    set;
+        //}
+
+
     }
+    //public class MechLocations
+    //{
+    //    public LocationArmor Armor
+    //    {
+    //        get; set;
+    //    }
+
+    //    public LocationInternal Internals
+    //    {
+    //        get; set;
+    //    }
+    //}
     public class LocationArmor
     {
+        public int ID { get; set; }
         public int HArmor { get; set; }
         public int CTArmor { get; set; }
         public int LTArmor { get; set; }
@@ -56,6 +56,7 @@ namespace DRS_Mobile.Models
     }
     public class LocationInternal
     {
+        public int ID { get; set; }
         public int HInternal { get; set; }
         public int CTInternal { get; set; }
         public int LTInternal { get; set; }
@@ -77,18 +78,22 @@ namespace DRS_Mobile.Models
         public int SensorHits { get; set; }
         public int LifeSupporHit { get; set; }
 
-        public List<LocationSlots> LocationSlotList { get; set; }
+        //public List<LocationSlots> LocationSlotList { get; set; }
 
-        public class LocationSlots
-        {
-            public int LocationID { get; set; }
-            public string Component { get; set; }
-            public bool Status { get; set; }
-        }
+        
 
 
 
     }
+    public class LocationSlots
+    {
+        public int MechID { get; set; }
+        public int LocationID { get; set; }
+        public int SlotID { get; set; }
+        public string Component { get; set; }
+        public bool Status { get; set; }
+    }
+
     public class MechConfigurations
     {
         public int Tonnage { get; set; }

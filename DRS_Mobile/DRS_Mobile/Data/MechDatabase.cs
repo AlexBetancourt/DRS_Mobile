@@ -12,7 +12,22 @@ namespace DRS_Mobile.Data
         public MechDatabase(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
+            database.CreateTableAsync<Pilot>().Wait();
+            database.CreateTableAsync<LocationArmor>().Wait();
+            database.CreateTableAsync<LocationSlots>().Wait();
+            //database.CreateTableAsync<List<LocationSlots>>().Wait();
+
+            database.CreateTableAsync<LocationInternal>().Wait();
+//            database.CreateTableAsync<MechLocations>().Wait();
             database.CreateTableAsync<Mech>().Wait();
+            database.CreateTableAsync<MechConfigurations>().Wait();
+            database.CreateTableAsync<AmmoItems>().Wait();
+            database.CreateTableAsync<EquipmentItems>().Wait();
+            database.CreateTableAsync<MechForces>().Wait();
+            database.CreateTableAsync<MissionTypes>().Wait();
+            database.CreateTableAsync<ForceMissions>().Wait();
+            database.CreateTableAsync<ForceMechs>().Wait();
+
         }
 
         public Task<List<Mech>> GetItemsAsync()

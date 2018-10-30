@@ -11,11 +11,11 @@ using DRS_Mobile.Models;
 namespace DRS_Mobile
 {
 
-    public partial class MainPage : ContentPage
+    public partial class MechDiagram : ContentPage
     {
 
 
-        public MainPage()
+        public MechDiagram()
         {
             InitializeComponent();
 
@@ -29,7 +29,7 @@ namespace DRS_Mobile
             mech.HeatSinks = 10;
             mech.Tonnage = 25;
 
-            MechLocations locations = new MechLocations();
+            //MechLocations locations = new MechLocations();
 
             LocationArmor Armor = new LocationArmor();
             Armor.HArmor = 6;
@@ -43,7 +43,7 @@ namespace DRS_Mobile
             Armor.CTRArmor = 4;
             Armor.LTRArmor = 3;
             Armor.RTRArmor = 3;
-            locations.Armor = Armor;
+            //mech.Armor = Armor;
             LocationInternal internals = new LocationInternal();
             internals.HInternal = 3;
             internals.CTInternal = 8;
@@ -54,7 +54,7 @@ namespace DRS_Mobile
             internals.LLInternal = 6;
             internals.RLInternal = 6;
 
-            List<LocationInternal.LocationSlots> Lista = new List<LocationInternal.LocationSlots>();
+            List<LocationSlots> Lista = new List<LocationSlots>();
             for (int j = 0; j < 8; j++)
             {
                 switch (j)
@@ -62,9 +62,9 @@ namespace DRS_Mobile
                     case 0:
                         for (int i = 0; i < internals.HSlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Cockpit" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -73,9 +73,9 @@ namespace DRS_Mobile
                     case 1:
                         for (int i = 0; i < internals.CTSlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Center Torso" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -84,9 +84,9 @@ namespace DRS_Mobile
                     case 2:
                         for (int i = 0; i < internals.LTSlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Left Torso" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -95,9 +95,9 @@ namespace DRS_Mobile
                     case 3:
                         for (int i = 0; i < internals.RTSlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Right Torso" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -106,9 +106,9 @@ namespace DRS_Mobile
                     case 4:
                         for (int i = 0; i < internals.LASlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Left Arm" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -117,9 +117,9 @@ namespace DRS_Mobile
                     case 5:
                         for (int i = 0; i < internals.RASlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Right Arm" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -128,9 +128,9 @@ namespace DRS_Mobile
                     case 6:
                         for (int i = 0; i < internals.LLSlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Left Leg" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -139,9 +139,9 @@ namespace DRS_Mobile
                     case 7:
                         for (int i = 0; i < internals.RLSlots; i++)
                         {
-                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+                            LocationSlots slot = new LocationSlots();
 
-                            slot.LocationID = j+1;
+                            slot.LocationID = j + 1;
                             slot.Component = "Right Leg" + (i + 1);
                             slot.Status = false;
                             Lista.Add(slot);
@@ -151,29 +151,28 @@ namespace DRS_Mobile
                         break;
                 }
             }
-            internals.LocationSlotList = Lista;
-            locations.Internals = internals;
-            mech.mechLocations = locations;
+            //internals.LocationSlotList = Lista;
+            //mech.Internals = internals;
 
             lblMech.Text = mech.Variant + " " + mech.Name;
 
-            stHHP.Maximum = mech.mechLocations.Armor.HArmor;
-            stCTHP.Maximum = mech.mechLocations.Armor.CTArmor;
-            stLTHP.Maximum = mech.mechLocations.Armor.LTArmor;
-            stRTHP.Maximum = mech.mechLocations.Armor.RTArmor;
-            stLAHP.Maximum = mech.mechLocations.Armor.LAArmor;
-            stRAHP.Maximum = mech.mechLocations.Armor.RAArmor;
-            stLLHP.Maximum = mech.mechLocations.Armor.LLArmor;
-            stRLHP.Maximum = mech.mechLocations.Armor.RLArmor;
+            stHHP.Maximum = Armor.HArmor;
+            stCTHP.Maximum = Armor.CTArmor;
+            stLTHP.Maximum = Armor.LTArmor;
+            stRTHP.Maximum =Armor.RTArmor;
+            stLAHP.Maximum = Armor.LAArmor;
+            stRAHP.Maximum = Armor.RAArmor;
+            stLLHP.Maximum = Armor.LLArmor;
+            stRLHP.Maximum = Armor.RLArmor;
 
-            stIHHP.Maximum = mech.mechLocations.Internals.HInternal;
-            stICTHP.Maximum = mech.mechLocations.Internals.CTInternal;
-            stILTHP.Maximum = mech.mechLocations.Internals.LTInternal;
-            stIRTHP.Maximum = mech.mechLocations.Internals.RTInternal;
-            stILAHP.Maximum = mech.mechLocations.Internals.LAInternal;
-            stIRAHP.Maximum = mech.mechLocations.Internals.RAInternal;
-            stILLHP.Maximum = mech.mechLocations.Internals.LLInternal;
-            stIRLHP.Maximum = mech.mechLocations.Internals.RLInternal;
+            stIHHP.Maximum =internals.HInternal;
+            stICTHP.Maximum = internals.CTInternal;
+            stILTHP.Maximum =internals.LTInternal;
+            stIRTHP.Maximum = internals.RTInternal;
+            stILAHP.Maximum = internals.LAInternal;
+            stIRAHP.Maximum = internals.RAInternal;
+            stILLHP.Maximum = internals.LLInternal;
+            stIRLHP.Maximum = internals.RLInternal;
 
             lblHHP.Text = stHHP.Maximum.ToString();
             lblCTHP.Text = stCTHP.Maximum.ToString();
@@ -228,8 +227,17 @@ namespace DRS_Mobile
             lblILLHP.IsVisible =
             lblIRLHP.IsVisible = false;
 
+            Pilot pilot = new Pilot();
+            pilot.Name = "Joren Matsuda";
+            pilot.Piloting = 4;
+            pilot.Gunnery = 3;
+            pilot.HP = 6;
+            pilot.Injuries = 0;
+            pilot.Affiliation = "Draconis Combine";
+            pilot.BirthYear =2981;
+            //mech.MechPilot = pilot;
 
-
+            App.MechData.SaveItemAsync(mech);
 
         }
 
@@ -717,13 +725,13 @@ namespace DRS_Mobile
 
         void CmdWeapons_Clicked(object sender, EventArgs e)
         {
-            var WeaponPage = new Weapons();
+            var WeaponPage = new WeaponsNEquip();
             Navigation.PushAsync(WeaponPage, true);
         }
 
         void cmdInternals_Clicked(object sender, EventArgs e)
         {
-            var InternalsPage = new Internals();
+            var InternalsPage = new WarriorNMech();
             Navigation.PushAsync(InternalsPage, true);
         }
     }
