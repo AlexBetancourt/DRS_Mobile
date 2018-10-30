@@ -55,7 +55,6 @@
         <!--HEAT-->
         <!--ProgressBar x:Name="pbHeat" Progress="0.8" ProgressColor="Red" Grid.Row="4"  AbsoluteLayout.LayoutBounds="0,1,AutoSize,AutoSize" Rotation="-90" AbsoluteLayout.LayoutFlags="PositionProportional"/-->
         <Label x:Name="lblMech" Font="Bold,30" TextColor="Black" Text="17" Rotation="0" AbsoluteLayout.LayoutBounds="0.50,0.95,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
-
     </AbsoluteLayout>
 </ContentPage>
 

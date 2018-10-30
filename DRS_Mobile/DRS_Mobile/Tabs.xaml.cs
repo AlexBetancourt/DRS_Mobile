@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DRS_Mobile.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,19 @@ namespace DRS_Mobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tabs : TabbedPage
     {
-        public Tabs ()
+        public Tabs()
         {
             InitializeComponent();
             this.Children.Add(new Internals() { Title = "Generals" });
             this.Children.Add(new MainPage() { Title = "Damage" });
             this.Children.Add(new Weapons() { Title = "Weapons" });
-           
-            this.Children.Add(new Internals() { Title = "Internals2" });
-            this.Children.Add(new Internals() { Title = "Internals3" });
-            this.Children.Add(new Internals() { Title = "Internals4" });
         }
+        public Tabs(TabbedPagesModel model):this()
+        {
+            
+
+        }
+
     }
+
 }

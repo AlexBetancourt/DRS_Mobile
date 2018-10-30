@@ -19,8 +19,6 @@ namespace DRS_Mobile
         {
             InitializeComponent();
 
-
-
             Mech mech = new Mech();
 
             mech.Name = "Commando";
@@ -30,9 +28,10 @@ namespace DRS_Mobile
             mech.JumpSpeed = 0;
             mech.HeatSinks = 10;
             mech.Tonnage = 25;
+
             MechLocations locations = new MechLocations();
 
-            LocationsArmor Armor = new LocationsArmor();
+            LocationArmor Armor = new LocationArmor();
             Armor.HArmor = 6;
             Armor.CTArmor = 8;
             Armor.LTArmor = 6;
@@ -56,20 +55,109 @@ namespace DRS_Mobile
             internals.RLInternal = 6;
 
             List<LocationInternal.LocationSlots> Lista = new List<LocationInternal.LocationSlots>();
-            for (int i = 0; i < internals.HSlots; i++)
+            for (int j = 0; j < 8; j++)
             {
-                LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
-                slot.Description = "cockpit" + i;
-                slot.Status = false;
-                Lista.Add(slot);
+                switch (j)
+                {
+                    case 0:
+                        for (int i = 0; i < internals.HSlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Cockpit" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 1:
+                        for (int i = 0; i < internals.CTSlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Center Torso" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 2:
+                        for (int i = 0; i < internals.LTSlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Left Torso" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 3:
+                        for (int i = 0; i < internals.RTSlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Right Torso" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 4:
+                        for (int i = 0; i < internals.LASlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Left Arm" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 5:
+                        for (int i = 0; i < internals.RASlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Right Arm" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 6:
+                        for (int i = 0; i < internals.LLSlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Left Leg" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    case 7:
+                        for (int i = 0; i < internals.RLSlots; i++)
+                        {
+                            LocationInternal.LocationSlots slot = new LocationInternal.LocationSlots();
+
+                            slot.LocationID = j+1;
+                            slot.Component = "Right Leg" + (i + 1);
+                            slot.Status = false;
+                            Lista.Add(slot);
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
             internals.LocationSlotList = Lista;
             locations.Internals = internals;
             mech.mechLocations = locations;
 
-            lblMech.Text =mech.Variant + " " +  mech.Name;
+            lblMech.Text = mech.Variant + " " + mech.Name;
 
-            stHHP.Maximum =mech.mechLocations.Armor.HArmor;
+            stHHP.Maximum = mech.mechLocations.Armor.HArmor;
             stCTHP.Maximum = mech.mechLocations.Armor.CTArmor;
             stLTHP.Maximum = mech.mechLocations.Armor.LTArmor;
             stRTHP.Maximum = mech.mechLocations.Armor.RTArmor;
@@ -365,12 +453,12 @@ namespace DRS_Mobile
         private void Button_Clicked(object sender, EventArgs e, object Control, string Location)
         {
             string Ubicacion = "";
-            string Ubi="";
+            string Ubi = "";
             switch (Location.Substring(0, 3))
             {
                 case "HHH":
                     Ubicacion = "Head";
-                    
+
                     break;
                 case "CTH":
                     Ubicacion = "Center Torso";
@@ -432,7 +520,7 @@ namespace DRS_Mobile
             var text = (Label)Control;
             if (text.Text == "0" && Ubicacion.Substring(0, 1) != " ")
             {
-               
+
                 string Speech = Ubicacion + " Armor Breached!";
                 CrossTextToSpeech.Current.Speak(Speech);
             }

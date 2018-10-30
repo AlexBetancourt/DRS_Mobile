@@ -15,6 +15,7 @@ namespace DRS_Mobile
             InitializeComponent();
 
             MainPage = new Tabs();
+            
         }
 
         protected override void OnStart()
