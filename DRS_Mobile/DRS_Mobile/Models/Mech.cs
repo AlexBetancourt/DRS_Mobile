@@ -76,7 +76,7 @@ namespace DRS_Mobile.Models
         public int EngineHits { get; set; }
         public int GyroHits { get; set; }
         public int SensorHits { get; set; }
-        public int LifeSupporHit { get; set; }
+        public int LifeSupportHit { get; set; }
 
         //public List<LocationSlots> LocationSlotList { get; set; }
 
@@ -119,10 +119,10 @@ namespace DRS_Mobile.Models
         public int Cost { get; set; }
         public int BV { get; set; }
     }
-    public class EquipmentItems
+    public class EquipmentComponents
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int ComponentID { get; set; }
         public string Description { get; set; }
         public int Heat { get; set; }
         public int Damage { get; set; }
