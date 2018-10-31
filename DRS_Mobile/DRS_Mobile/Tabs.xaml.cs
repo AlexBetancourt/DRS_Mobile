@@ -43,9 +43,10 @@ namespace DRS_Mobile
 
     }
 
+        private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 
 }

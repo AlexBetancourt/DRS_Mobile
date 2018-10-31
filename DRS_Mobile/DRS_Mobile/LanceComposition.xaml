@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DRS_Mobile.LanceComposition" BackgroundColor="Maroon">
+             x:Class="DRS_Mobile.LanceComposition" BackgroundColor="Maroon"  Disappearing="ContentPage_Disappearing" Appearing="ContentPage_Appearing">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Lance Name:" BackgroundColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
